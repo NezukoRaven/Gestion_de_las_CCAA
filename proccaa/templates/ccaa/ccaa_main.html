@@ -1,0 +1,30 @@
+
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <div class="col-md-11">
+        <div class="mb-3">
+            <header class='mb-4'>
+                <h2 class='h2 medium text-blue'>Gestión de las CCAA</h2>
+            </header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card bg-skin" style="width: auto;">
+                            <div class="card-body">
+                                <h5 class="card-title">Usuarios</h5>
+                                <div class="d-flex justify-content-center mx-0-5--custom">
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>             
+                </div>
+            </div>            
+        </div>
+    </div>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'core/base_login.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+<style>.errorlist{color:red;}</style>
+<link rel="stylesheet" type="text/css" href="{% static 'registration/style.css' %}" />
+<section>
+    {% if 'register' in request.GET %}
+        <p style="color: green">Usuario registrado correctamente</p>
+    {% endif%}
+    <form action="" method="post" class="col-40 col-md-10 col-lg-10 m-auto">
+        {% csrf_token %}
+        <h4>
+            &nbsp;
+            <img src="https://bl6pap003files.storage.live.com/y4mSkHdBoYrh_hmblvxn1DevZv9hROMCvH6QcPW5-Ua2ECS6wv5uKD0lc_mVjH5GpsYaVt98pd5ha3boGAK6DfMyZ9Wr3CYd-hXlCd-NAh2AaXu-LK6rCSrDoTzOViVhw-Y4iks7M3gqR-if_FjAU1k2EMbJAdxapBDlQqzBImiXEGpp3sxuy92Eu28Vn8fl46j?width=542&height=231&cropmode=none" width="250" height="100" />
+        </h4>
+        <h4 class="mb-3 text-blue text-center">CCAA Login</h4>
+        {% if form.non_field_errors %}
+            <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+        {% endif %}
+        <div class="mb-3">
+            <label for="user" class="form-label">Usuario</label>
+            <input type="text" name="username" class="form-control"/>
+            <span class="feedback body-small text-regular"></span>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" name="password" class="form-control" id="password"/>
+            <span class="feedback body-small text-regular"></span>
+        </div>
+        <div class="d-flex justify-content-end mb-3">
+            <a class="body-normal text-blue text-decoration-underline cursor-pointer">Olvidé mi contraseña</a>
+        </div>
+        <div class="caja">
+            <select>
+              <option value="0">Select user:</option>
+              <option for="Docente" value="Docente" id="Docente">Docente</option>
+              <option for="Director" value="Director" id="Director">Director</option>
+              <option for="Coordinador" value="Coordinador" id="Coordinador">Coordinador</option>
+              <option for="Administrador" value="Administrador" id="Administrador">Administrador</option>
+            </select>
+          </div>
+        <div class="d-flex justify-content-center text-center">
+            <button type="submit" class="button">
+                <span>Iniciar Sesión</span>
+            </button>
+        </div>
+    </form>
+</section>
+{% endblock %}
