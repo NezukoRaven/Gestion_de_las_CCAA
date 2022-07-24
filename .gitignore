@@ -104,14 +104,8 @@ venv.bak/
 #########################
 #      Django           #
 #########################
-*.log
-*.pot
-*.pyc
-__pycache__/
+
 .vscode/
 Gestion_de_las_CCAA/urls.py
 Gestion_de_las_CCAA/settings.py
-media/
-FinHelp.txt
-user_test.txt
 
