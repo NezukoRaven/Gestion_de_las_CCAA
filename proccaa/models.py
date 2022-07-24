@@ -16,3 +16,22 @@ class Usuario(models.Model):
         ordering = ['nombre']
     def _str_(self):
         return self.nombre
+
+class FormPago(models.Model):
+    carrera = models.CharField(max_length=100, null=True, blank=True, verbose_name='Carrera')
+    sede = models.CharField(max_length=100, null=True, blank=True, verbose_name='Sede')
+    nivel = models.IntegerField(null=True, blank=True, verbose_name='Celular colaborador')
+    periodo = models.CharField(max_length=100, null=True, blank=True, verbose_name='Periodo')
+    año = models.CharField(max_length=100,null=True, blank=True, verbose_name='Año')
+    reunion_1 = models.CharField(max_length=100,null=True, blank=True, verbose_name='Fecha Reunión 1')
+    reunion_1_link = models.CharField(max_length=100,null=True, blank=True, verbose_name='Link 1')
+    reunion_2 = models.CharField(max_length=100,null=True, blank=True, verbose_name='Fecha Reunión 2')
+    reunion_2_link = models.CharField(max_length=100,null=True, blank=True, verbose_name='Link 2')
+    reunion_3 = models.CharField(max_length=100,null=True, blank=True, verbose_name='Fecha Reunión 3')
+    reunion_3_link = models.CharField(max_length=100,null=True, blank=True, verbose_name='Link 3')
+    class Meta:
+        verbose_name = 'Formulario de Pago'
+        verbose_name_plural = 'Formularios de Pago'
+        ordering = ['carrera']
+    def _str_(self):
+        return self.carrera
