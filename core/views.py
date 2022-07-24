@@ -29,7 +29,7 @@ def check_profile(request):
     except:
         messages.add_message(request, messages.INFO, 'Hubo un error con su usuario, por favor contactese con los administradores')              
         return redirect('login')
-    if profile.group_id == 1 and profile.tipouser == 'Administrador':        
+    if profile.group_id == 1 and profile.tipouser == 'Administrador': 
         return redirect('ccaa_main')
     else:
         return redirect('logout')

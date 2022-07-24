@@ -30,3 +30,4 @@ def ccaa_main(request):
         return redirect('check_group_main')
     template_name = 'ccaa/ccaa_main.html'
     return render(request,template_name,{'profile':profile})
+
