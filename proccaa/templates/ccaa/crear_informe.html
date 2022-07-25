@@ -1,0 +1,47 @@
+{% extends 'core/base_admin.html' %}
+{% block content %} 
+{% block extra_css %}
+{% endblock extra_css %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="{% url 'guardar_informe' %}">
+
+
+        {% csrf_token %}
+
+        <h>Innovacion en la docencia</h>
+        <p>Metodologias y/o evaluaciones integradas o desarrolladas por las asignaturas:         <textarea name="metodologias" id="" cols="30" rows="2"></textarea></p>
+        <p>Capacitaciones en herramientas para la docencia:                                      <textarea name="capacitaciones" id="" cols="30" rows="2"></textarea></p>
+        <p>Numero y tipo de actividades realizadas en la plataforma CANVAS por los docentes:     <textarea name="actividades" id="" cols="30" rows="2"></textarea></p>
+        <p>Otras mejoras o innovaciones en la docencia evidenciadas por los miembros de la CCAA: <textarea name="otros" id="" cols="30" rows="2"></textarea></p>
+
+        <p>¿Que problematicas procuró mejorar con la estrategia pedagogica colaborativa implementada?</p>
+        <p>Objetivo: <textarea name="objetivo" id="" cols="40" rows="10"></textarea></p>
+        <p>Estrategia <textarea name="estrategia" id="" cols="40" rows="10"></textarea></p>
+
+        <p>2-. ¿Que aspectos fueron trabajados en el semestre otoño de 2022? y de estós ¿Cual de ellos tuvo mayor impacto en el rendimiento de los/las estudiantes? ¿Por qué?</p>
+        <textarea name="respuesta2" id="" cols="100" rows="10"></textarea>
+
+        <p>3-. ¿Qué elementos no fueron considerados y por qué razon?</p>
+        <textarea name="respuesta3" id="" cols="100" rows="10"></textarea>
+
+        <p>4-. ¿Considerando el plan de mejora de primavera 2020, según corresponda, realice un análisis del nivel de cumplimiento, considerando el o los problemas declarados?</p>
+        <textarea name="respuesta4" id="" cols="100" rows="10"></textarea>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+
+</body>
+</html>
+
+{% block extrajs %} 
+{% endblock extrajs %}
+{% endblock %}

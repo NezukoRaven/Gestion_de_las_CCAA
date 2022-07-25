@@ -35,3 +35,21 @@ class FormPago(models.Model):
         ordering = ['carrera']
     def _str_(self):
         return self.carrera
+
+class Informe(models.Model):
+    metodologias = models.CharField(max_length=150, null=True, blank=True, verbose_name='Metodologias')
+    capacitaciones = models.CharField(max_length=150, null=True, blank=True, verbose_name='Capacitaciones')
+    actividades = models.CharField(max_length=150, null=True, blank=True, verbose_name='Actividades')
+    otros = models.CharField(max_length=150, null=True, blank=True, verbose_name='Otros')
+    objetivo = models.TextField(verbose_name='Objetivo')
+    estrategia = models.TextField(verbose_name='Estrategia')
+    respuesta2 = models.TextField(verbose_name='Respuesta2')
+    respuesta3 = models.TextField(verbose_name='Respuesta3')
+    respuesta4 = models.TextField(verbose_name='Respuesta4')
+
+    class Meta:
+        verbose_name = 'Informe'
+        verbose_name_plural = 'Informes'
+        ordering = ['metodologias']
+    def _str_(self):
+        return self.metodologias

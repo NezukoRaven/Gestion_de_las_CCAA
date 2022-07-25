@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.shortcuts import render,redirect,get_object_or_404
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 #from registration.models import Profile
-from proccaa.models import FormPago, Usuario
+from proccaa.models import FormPago, Informe, Usuario
 
 from xml.etree.ElementTree import QName
 from django.shortcuts import render
@@ -101,3 +101,50 @@ def ver_form(request, id):
     form_data = FormPago.objects.get(pk=id)
     template_name = 'ccaa/ver_form_ant/ver_inf.html'
     return render(request,template_name,{'profile':profile, 'form_data':form_data})
+
+def guardar_informe(request):
+    if request.method == 'POST':
+        metodologias = request.POST.get('metodologias')
+        capacitaciones = request.POST.get('capacitaciones')
+        actividades = request.POST.get('actividades')
+        otros = request.POST.get('otros')
+        objetivo = request.POST.get('objetivo')
+        estrategia = request.POST.get('estrategia')
+        respuesta2 = request.POST.get('respuesta2')
+        respuesta3 = request.POST.get('respuesta3')
+        respuesta4 = request.POST.get('respuesta4')
+
+        if metodologias == '' or capacitaciones == '' or actividades == '' or otros == '':
+            return redirect('ccaa_main')
+        
+        informe_save = Informe(
+            metodologias =metodologias,
+            capacitaciones = capacitaciones,
+            actividades = actividades,
+            otros = otros,
+            objetivo= objetivo,
+            estrategia= estrategia,
+            respuesta2= respuesta2,
+            respuesta3= respuesta3,
+            respuesta4= respuesta4,
+        )
+        informe_save.save()
+        return redirect('ccaa_main')
+
+def informe_de_cierre(request):
+    profile = Profile.objects.get(user_id=request.user.id)
+    if profile.group_id != 1:
+        messages.add_message(request, messages.INFO, 'Intenta ingresar a una area para la que no tiene permisos')
+        return redirect('check_group_main')
+    template_name = 'ccaa/crear_informe.html'
+    return render(request,template_name,{'profile':profile})
+
+'''class crear_informePDF(View):
+    def get(self,request,*args,**kwargs):
+        informes = Informe.objects.filter()
+        data={
+            'informes':informes
+        }
+        template_name = 'ccaa/crear_informe.html'
+        pdf= renderizar_pdf(template_name,data)
+        return HttpResponse(pdf, content_type='application/pdf')'''
