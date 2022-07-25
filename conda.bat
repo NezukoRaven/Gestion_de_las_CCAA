@@ -1,0 +1,1 @@
+D:\Miniconda3\Scripts/activate

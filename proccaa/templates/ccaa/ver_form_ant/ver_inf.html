@@ -1,0 +1,122 @@
+{% load static %}
+{% block content %}
+    {% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'proccaa/ver_inf.css' %}">   
+    {% endblock extra_css %}
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="ver_inf.css">
+        <title>Ver Formulario de Pago</title>
+    </head>
+    <body>
+        <div> <a href="{% url 'ver_form_ant' %}"><img src="{% static 'img/ua1.png' %}" class="logo2"></a>
+        <section class="grid1">
+            <div class="perfil">
+                <p>Juan Carlos Vidal<br>Director de Carrera<img src="{% static 'img/usuario.png' %}"class="user"></p>
+            </div>
+            <div class="topbar">
+                <div class="a">
+                    <div class="des">
+                        <p>Deshacer</p>
+                    </div>
+                    <div class="reh">
+                        <p>Rehacer</p>
+                    </div>
+                </div>
+                <div class="b">
+                    <div class="lzoom">
+                        <p>-</p>
+                    </div>
+                    <div class="mzoom">
+                        <p>+</p>
+                    </div>
+                </div>
+                <div class="c">
+                    <div class="supr">
+                        <p>Eliminar</p>
+                    </div>
+                    <div class="imp">
+                        <p>Imprimir</p>
+                    </div>
+                </div>
+                <div class="year">
+                    <p>2021</p>
+                </div>
+            </div>
+            <div class="doc">
+                <form method="post" style="text-align:center; background-color: transparent;">
+                    {% csrf_token %}
+                    <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                        <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Carrera</label>
+                                <input type="text" class="form-control" name="carrera" id="carrera" value="{{form_data.carrera}}" placeholder="Carrera" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Sede</label>
+                                <input type="text" class="form-control" name="sede" id="sede" value="{{form_data.sede}}" placeholder="Sede" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Nivel</label>
+                                <input type="text" class="form-control" name="nivel" id="nivel" value="{{form_data.nivel}}" placeholder="Nivel" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Periodo</label>
+                                <input type="text" class="form-control" name="periodo" id="periodo" value="{{form_data.periodo}}" placeholder="Periodo" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Año</label>
+                                <input type="text" class="form-control" name="año" id="año" value="{{form_data.año}}" placeholder="Año-Mes-Día" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Reunion 1</label>
+                                <input type="text" class="form-control" name="reunion_1" id="reunion_1" value="{{form_data.reunion_1}}" placeholder="Reunion 1" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Link</label>
+                                <input type="text" class="form-control" name="reunion_1_link" id="reunion_1_link" value="{{form_data.reunion_1_link}}" placeholder="Reunion 1 link" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Reunion 2</label>
+                                <input type="text" class="form-control" name="reunion_2" id="reunion_2" value="{{form_data.reunion_2}}" placeholder="Reunion 2" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Link</label>
+                                <input type="text" class="form-control" name="reunion_2_link" id="reunion_2_link" value="{{form_data.reunion_2_link}}" placeholder="Reunion 2 link" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Reunion 3</label>
+                                <input type="text" class="form-control" name="reunion_3" id="reunion_3" value="{{form_data.reunion_3}}" placeholder="Reunion 3" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Link</label>
+                                <input type="text" class="form-control" name="reunion_3_link" id="reunion_3_link" value="{{form_data.reunion_3_link}}" placeholder="Reunion 3 link" disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        </div>
+    </body>
+    </html>
+{% block extrajs %}    
+{% endblock extrajs %}    
+{% endblock %}

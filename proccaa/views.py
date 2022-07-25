@@ -84,3 +84,20 @@ def new_form(request):
         messages.add_message(request, messages.INFO, 'Error en el método de envío')
         return redirect('check_group_main')              
 
+def ver_form_ant(request):
+    profile = Profile.objects.get(user_id=request.user.id)
+    if profile.group_id != 1:
+        messages.add_message(request, messages.INFO, 'Intenta ingresar a una area para la que no tiene permisos')
+        return redirect('check_group_main')
+    form_data = FormPago.objects.all()
+    template_name = 'ccaa/ver_form_ant/ver_inf_ant.html'
+    return render(request,template_name,{'profile':profile, 'form_data':form_data})
+
+def ver_form(request, id):
+    profile = Profile.objects.get(user_id=request.user.id)
+    if profile.group_id != 1:
+        messages.add_message(request, messages.INFO, 'Intenta ingresar a una area para la que no tiene permisos')
+        return redirect('check_group_main')
+    form_data = FormPago.objects.get(pk=id)
+    template_name = 'ccaa/ver_form_ant/ver_inf.html'
+    return render(request,template_name,{'profile':profile, 'form_data':form_data})

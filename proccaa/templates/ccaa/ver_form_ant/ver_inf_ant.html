@@ -1,0 +1,77 @@
+{% load static %}
+{% block content %}
+    {% block extra_css %} 
+    <link rel="stylesheet" href="{% static 'proccaa/ver_inf_ant.css' %}">   
+    {% endblock extra_css %}
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="ver_inf_ant.css">
+        <title>Formularios de Pago Anteriores</title>
+    </head>
+    <body>
+        <div>  <a href="{% url 'ccaa_main' %}"> <img src="{% static 'img/LOGO.png' %}" class="logo"></a>
+        <section class="grid1">
+            <div class="perfil">
+                <p>Juan Carlos Vidal<br>Director de Carrera<img src="{% static 'img/usuario.png' %}"class="user"></p>
+            </div>
+            <div class="sidebar">
+                Vista Preliminar
+            </div>
+            <div class="ventana">
+                <div class="vista">
+
+                </div>
+                <div class="op">
+                    <div class="lesszoom">
+                        <p>-</p>
+                    </div>
+                    <div class="perzoom">
+                        <p>100%</p>
+                    </div>
+                    <div class="morezoom">
+                        <p>+</p>
+                    </div>
+                    <div class="enter">
+                        <p>Abrir</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pag">
+                Formularios de Pago Anteriores
+            </div>
+            <div class="nuevo">
+                <p>Nuevo Formulario de Pago</p>
+            </div>
+                <div class="buscar">
+                <div class="txt">
+                    <input type="text" placeholder="Fecha, Carrera, SEDE, Etc...">
+                </div>
+                <div class="btn">
+                    <p>Buscar</p>
+                </div>
+            </div>
+            <div class="contenido">
+                <div class="informe">
+                    {% for h in form_data %}
+                    <a style="color: ffffff;" href="{% url 'ver_form' h.id %}">
+                    <p>Periodo: Primavera 2021<br>SEDE: Providencia<br>Carrera: Ing. Civil Inf.
+                        <br>Nivel: 6<br>Reuniones: 1</p>
+                    </a> 
+                    {% endfor %}
+                </div>
+            </div>
+
+        </section>
+        
+        </div>
+    </body>
+    </html>
+{% block extrajs %}    
+{% endblock extrajs %}    
+{% endblock %}
