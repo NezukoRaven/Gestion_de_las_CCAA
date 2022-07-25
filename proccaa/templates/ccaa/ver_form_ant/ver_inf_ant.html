@@ -46,7 +46,7 @@
                 Formularios de Pago Anteriores
             </div>
             <div class="nuevo">
-                <p>Nuevo Formulario de Pago</p>
+                <a href="{% url 'new_formpag' %}" style="color: ffffff; text-decoration:none;">Nuevo Formulario de Pago</a>
             </div>
                 <div class="buscar">
                 <div class="txt">
@@ -59,7 +59,7 @@
             <div class="contenido">
                 <div class="informe">
                     {% for h in form_data %}
-                    <a style="color: ffffff;" href="{% url 'ver_form' h.id %}">
+                    <a style="color: ffffff;text-decoration:none;" href="{% url 'ver_form' h.id %}">
                     <p>Periodo: Primavera 2021<br>SEDE: Providencia<br>Carrera: Ing. Civil Inf.
                         <br>Nivel: 6<br>Reuniones: 1</p>
                     </a> 
