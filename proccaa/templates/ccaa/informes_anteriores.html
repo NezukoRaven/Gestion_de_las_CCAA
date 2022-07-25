@@ -1,0 +1,77 @@
+{% extends 'core/base_admin.html' %}
+{% block content %} 
+{% block extra_css %}
+{% endblock extra_css %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Informes anteriores</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="inf_ant.css">
+    
+    </head>
+    <body>
+        <header>
+        
+        </header>
+        
+        <hr>
+        <h1 style="text-align: center;">Informes anteriores</h1>
+        
+        <h2>Nuevo Informe</h2>
+        
+        <form method="post" action="" class='col-12 col-lg-6 input-container-search my-auto me-3'>
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..." name="buscar" value="{{ request.POST.buscar }}">
+                <div class="input-group-append">
+                    <input class="flexsearch--submit" type="submit" value="&#10140;"/>
+                    <i class="fas fa-search fa-sm"></i>
+                  </button>
+                </div>
+            </div>
+        </form>
+
+        &nbsp;
+
+        <table class="table table-user">
+            <thead>
+                <tr>
+                    <td width="1%" scope="col">Periodo</td>
+                    <td width="0%" scope="col">Sede</td>
+                    <td width="0%" scope="col">Carrera</td>
+                    <td width="0%" scope="col">Nivel</td>
+                    <td width="1%" scope="col">Ver</td>
+                    
+                    <!--<td width="0%" scope="col">Descargar</td>
+                    <td width="0%" scope="col">Imprimir</td>
+                    <td width="0%" scope="col">Eliminar</td>-->
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in captura %}
+                    <tr>
+                        <td width="0.5%">{{h.periodo}}</td>
+                        <td width="0.5%">{{h.sede}}</td>
+                        <td width="0.5%">{{h.carrera}}</td>
+                        <td width="0.5%">{{h.nivel}}</td>
+                        <td>
+                            <a href="{% url 'VerInformeAnterior' 1 %}">Ver</a>
+                        </td>
+
+                    </tr>
+
+                    
+        
+                {% endfor %}
+                
+            </tbody>
+        </table>
+
+    </body>
+
+</html>
+{% block extrajs %}
+{% endblock extrajs %}
+{% endblock %}

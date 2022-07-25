@@ -1,0 +1,84 @@
+{% extends 'core/base_admin.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+    {% block extra_css %}    
+    {% endblock extra_css %}    
+    <header class='mb-4'>
+        <h2 class='h2 medium text-blue'>Vista del Informe</h2>
+    </header>
+    <div class="col-md-11">
+        <div class="mb-3">
+            <div class="d-flex flex-column align-items-center align-items-lg-start">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                        <div class="col-12 col-lg-12 row row-cols-1 row-cols-md-1 g-2 p-lg-0-5">
+                            <!--<div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Innovacion en la docencia</label>
+                                <input type="text" class="form-control" name="metodologias" id="metodologias" value="{{captura_data.metodologias}}"  disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>-->
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Metodologias y/o evaluaciones integradas o desarrolladas por las asignaturas</label>
+                                <textarea type="text" class="form-control" name="metodologias" id="metodologias" value="{{captura_data.metodologias}}" disabled>{{captura_data.metodologias}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Capacitaciones en herramientas para la docencia</label>
+                                <textarea type="text" class="form-control" name="capacitaciones" id="capacitaciones" value="{{captura_data.capacitaciones}}"  disabled>{{captura_data.capacitaciones}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_name" class="form-label">Numero y tipo de actividades realizadas en la plataforma CANVAS por los docentes</label>
+                                <textarea type="text" class="form-control" name="actividades" id="actividades" value="{{captura_data.actividades}}"  disabled>{{captura_data.actividades}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Otras mejoras o innovaciones en la docencia evidenciadas por los miembros de la CCAA</label>
+                                <textarea type="text" class="form-control" name="otros" id="otros" value="{{captura_data.otros}}"  disabled>{{captura_data.otros}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <!--<div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">¿Que problematicas procuró mejorar con la estrategia pedagogica colaborativa implementada?</label>
+                                <input type="text" class="form-control" name="direccion" id="direccion" value="{{captura_data.}}"  disabled>
+                                <div class="feedback body--small normal"></div>
+                            </div>-->
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Objetivo</label>
+                                <textarea type="text" class="form-control" name="objetivo" id="objetivo" value="{{captura_data.objetivo}}"  disabled>{{captura_data.objetivo}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">Estrategia</label>
+                                <textarea type="text" class="form-control" name="estrategia" id="estrategia" value="{{captura_data.estrategia}}"  disabled>{{captura_data.estrategia}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">2-.¿Que aspectos fueron trabajados en el semestre otoño de 2022? y de estós ¿Cual de ellos tuvo mayor impacto en el rendimiento de los/las estudiantes? ¿Por qué?</label>
+                                <textarea type="text" class="form-control" name="respuesta2" id="respuesta2" value="{{captura_data.respuesta2}}"  disabled>{{captura_data.respuesta2}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">3-.¿Qué elementos no fueron considerados y por qué razon?</label>
+                                <textarea type="text" class="form-control" name="respuesta3" id="respuesta3" value="{{captura_data.respuesta3}}"  disabled>{{captura_data.respuesta3}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+
+                            <div class="mb-0 col-md-12">
+                                <label for="category_description" class="form-label">4-. ¿Considerando el plan de mejora de primavera 2020, según corresponda, realice un análisis del nivel de cumplimiento, considerando el o los problemas declarados?</label>
+                                <textarea type="text" class="form-control" name="respuesta4" id="respuesta4" value="{{captura_data.respuesta4}}"  disabled>{{captura_data.respuesta4}}</textarea>
+                                <div class="feedback body--small normal"></div>
+                            </div>
+                            
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
+{% endblock %}

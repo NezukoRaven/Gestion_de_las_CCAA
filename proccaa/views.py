@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.shortcuts import render,redirect,get_object_or_404
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 #from registration.models import Profile
-from proccaa.models import FormPago, Informe, Usuario
+from proccaa.models import FormPago, Informe, Usuario, Ver_informe
 
 from xml.etree.ElementTree import QName
 from django.shortcuts import render
@@ -148,3 +148,22 @@ def informe_de_cierre(request):
         template_name = 'ccaa/crear_informe.html'
         pdf= renderizar_pdf(template_name,data)
         return HttpResponse(pdf, content_type='application/pdf')'''
+
+def VerInforme(request):
+    profile = Profile.objects.get(user_id=request.user.id)
+    if profile.group_id != 1:
+        messages.add_message(request, messages.INFO, 'Intenta ingresar a una area para la que no tiene permisos')
+        return redirect('check_group_main')
+    captura = Ver_informe.objects.all()
+    template_name = 'ccaa/informes_anteriores.html'
+    return render(request,template_name,{'profile':profile, 'captura':captura})
+
+def VerInformeAnterior(request,id):
+    profile = Profile.objects.get(user_id=request.user.id)
+    if profile.group_id != 1:
+        messages.add_message(request, messages.INFO, 'Intenta ingresar a una area para la que no tiene permisos')
+        return redirect('check_group_main')
+    vinf = Ver_informe.objects.filter(verinforme=id)
+    captura_data = Informe.objects.get(pk=1)
+    template_name = 'ccaa/ver_informes_anteriores.html'
+    return render(request,template_name,{'profile':profile, 'captura_data':captura_data})

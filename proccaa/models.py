@@ -53,3 +53,17 @@ class Informe(models.Model):
         ordering = ['metodologias']
     def _str_(self):
         return self.metodologias
+
+class Ver_informe(models.Model):
+    verinforme = models.IntegerField(null=True, blank=True, verbose_name='informe_id')
+    periodo = models.CharField(max_length=100, null=True, blank=True, verbose_name='Periodo')
+    sede = models.CharField(max_length=100, null=True, blank=True, verbose_name='Sede')
+    carrera = models.CharField(max_length=100, null=True, blank=True, verbose_name='Carrera')
+    nivel = models.IntegerField(null=True, blank=True, verbose_name='Nivel')
+
+    class Meta:
+        verbose_name = 'VerInforme'
+        verbose_name_plural = 'VerInformes'
+        ordering = ['periodo']
+    def _str_(self):
+        return self.periodo

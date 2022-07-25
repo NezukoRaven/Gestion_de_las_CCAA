@@ -11,4 +11,6 @@ ccaa_urlpatterns = [
    # path('crear_informe/',views.crear_informePDF.as_view(),name="crear_informe"), En proceso - crea un pdf.
     path('guardar_informe/',views.guardar_informe,name="guardar_informe"),
     path('informe_de_cierre/',views.informe_de_cierre,name="informe_de_cierre"),
+    path('Ver_informe/',views.VerInforme,name="VerInforme"),
+    path('Ver_informe_anteriores/<id>/',views.VerInformeAnterior,name="VerInformeAnterior"),
 ]

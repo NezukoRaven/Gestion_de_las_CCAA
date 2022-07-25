@@ -1,0 +1,43 @@
+header{
+    display: flex;
+    height: 120px;
+    background-image: url(Barra\ spuerior\ .png);
+    justify-content: space-between;
+
+}
+
+
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url(image\ 3.png);
+    position: relative;
+    height: 1080px;
+    width: 1920px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+
+    
+}
+
+h1{
+    text-align: center;
+    background-color: #777777;
+    margin: 10px;
+}
+
+h2{
+    margin: 25px;
+}
+
+table{
+    text-align: center;
+    margin: 25px;
+    background-color: #ABAFD9;
+}
+
+form {
+    text-align: right;
+    margin: 25px;
+}
+
