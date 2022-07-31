@@ -1,0 +1,49 @@
+
+body {
+    background-image: url("https://bl6pap003files.storage.live.com/y4mAidE4juQ9HwQZmRRP94TrWu09H5Nwa7LhPYRQM6rSDBEzR26jY8oMBk6SojiJY2FkxRAdMa_KfIVPPEfETMdicrapFooL9blW5lEZP9TdLGD-FzaB5qyAKIOJF-SIFtC4ziIwPbIsmdoKzZ-9Vy1kWWkacHWEtcr6Ixe9Jys8k6NXRVM2B8kqgf1dIvMt3mh?width=1920&height=1080&cropmode=none");
+    position:fixed;
+    z-index:1;
+    width: 1920px;
+    height: 1080px;
+    background-size: 100% 100%;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.755);
+    border: 3px solid #00A4BD;
+    height: 600px;
+    width: 300px;
+    position: fixed;
+}
+
+.caja {
+    margin:20px auto 40px auto;	
+    border:2px solid #000000;
+    height:30px;
+    overflow: hidden;
+    width: 230px;
+    position:relative;
+ }
+ select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+ }
+ select:focus{ outline: none;}
+ 
+ .caja::after{
+     content:"\025be";
+     display:table-cell;
+     padding-top:7px;
+     text-align:center;
+     width:30px;
+     height:30px;
+     background-color:#d9d9d9;
+     position:absolute;
+     top:0;
+     right:0px;	
+     pointer-events: none;
+ }

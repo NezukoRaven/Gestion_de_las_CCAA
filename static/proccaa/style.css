@@ -1,0 +1,10 @@
+
+body {
+    background-image: url("https://bl6pap003files.storage.live.com/y4mAidE4juQ9HwQZmRRP94TrWu09H5Nwa7LhPYRQM6rSDBEzR26jY8oMBk6SojiJY2FkxRAdMa_KfIVPPEfETMdicrapFooL9blW5lEZP9TdLGD-FzaB5qyAKIOJF-SIFtC4ziIwPbIsmdoKzZ-9Vy1kWWkacHWEtcr6Ixe9Jys8k6NXRVM2B8kqgf1dIvMt3mh?width=1920&height=1080&cropmode=none");
+    position:fixed;
+    z-index:1;
+    width: 1920px;
+    height: 1080px;
+    background-size: 100% 100%;
+}
+

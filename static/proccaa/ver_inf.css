@@ -1,0 +1,155 @@
+body{
+    color: white;
+	text-shadow: 0px 0px 5px #123456;
+	height: 100vh;
+    background-image: url(fondos/fondo2.png);
+    background-size: 100% 110%;
+    background-repeat:no-repeat;
+    background-position: center top;
+    font-family: 'Inter', sans-serif
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/*body {
+	color: white;
+	text-shadow: 0px 0px 5px #123456;
+	height: 100vh;
+	background-image: url(fondos/fondo.png);
+    background-size: 100% 110%;
+    background-repeat:no-repeat;
+    background-position: center top;
+    font-family: 'Inter', sans-serif;
+}*/
+ /* Barra Superior */ 
+.logo2{
+    position:absolute;
+    height:80px;
+    width:70px;
+    top: 10px;
+    left : 10px;
+    z-index: 1;
+}
+.user{
+    position:absolute;
+    top: 30px;
+    right: 7%;
+    height:45px;
+    width:45px;
+}
+
+ /* Grid 1 */ 
+.grid1{
+    margin: 1em auto;
+    width: 90%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(9, 1fr);
+}
+.grid1>.perfil,.grid1>.topbar,.grid1>.doc,.grid1>div{
+    background: ffffff;
+    padding: 10px;
+    margin: 10px;
+}
+ /* Perfil Boton */ 
+.grid1 .perfil{grid-column: 8/10; grid-row: 0/1;
+    box-shadow: 4px 4px 9px 0px rgba(0,0,0,0.74);
+    -webkit-box-shadow: 4px 4px 9px 0px rgba(0,0,0,0.74);
+    -moz-box-shadow: 4px 4px 9px 0px rgba(0,0,0,0.74);
+    height: 30px; width: auto;
+    background-color: #3a4b57;
+    border-radius: 25px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: background-color is;}
+.perfil:hover{background-color: #5683a4;}
+.perfil p{
+    text-align: left;
+    font-size: 16px;line-height: 16px;}
+
+/* Barra superior*/
+.grid1 .topbar{grid-column: 1/8; grid-row: 1/2;
+    height: 30px; width: auto;}
+.topbar{margin: 1em auto;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(6, 1fr);}
+.topbar>.a,.topbar>.b,.topbar>.c,.topbar>.year{
+    box-shadow: 4px 4px 9px 0px rgba(0,0,0,0.74);
+    -webkit-box-shadow: 4px 4px 9px 0px rgba(0,0,0,0.74);
+    -moz-box-shadow: 4px 4px 9px 0px rgba(0,0,0,0.74);
+    background-color: #607c91;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+/* Barra Superior / re/des hacer*/
+.topbar .a{ grid-column: 1/2;}
+.a{display: grid;
+    grid-template-columns: repeat(2, 1fr);}
+.a .des{grid-column: 1/2;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;}
+.des:hover{background-color: #264053;}
+.des p{
+    text-align:center;
+    font-size: 0.8em;line-height: 3em;}
+.a .reh{grid-column: 2/2;
+    background-color: #607c91;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;}
+.reh:hover{background-color: #264053;}
+.reh p{
+    text-align:center;
+    font-size: 0.8em;line-height: 3em}
+/* Barra superior / zoom*/
+.topbar .b{ grid-column: 2/3;}
+.b{display: grid;
+    grid-template-columns: repeat(2, 1fr);}
+.b .lzoom{grid-column: 1/2;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;}
+.lzoom:hover{background-color: #264053;}
+.lzoom p{
+    text-align:center;
+    font-size: 0.8em;line-height: 3em;}
+.b .mzoom{grid-column: 2/2;
+    background-color: #607c91;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;}
+.mzoom:hover{background-color: #264053;}
+.mzoom p{
+    text-align:center;
+    font-size: 0.8em;line-height: 3em}
+/* Barra superior* / borrar imprimir*/
+.topbar .c{ grid-column: 3/4;}
+.c{display: grid;
+    grid-template-columns: repeat(2, 1fr);}
+.c .supr{grid-column: 1/2;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;}
+.supr:hover{background-color: #264053;}
+.supr p{
+    text-align:center;
+    font-size: 0.8em;line-height: 3em;}
+.c .imp{grid-column: 2/2;
+    background-color: #607c91;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;}
+.imp:hover{background-color: #264053;}
+.imp p{
+    text-align:center;
+    font-size: 0.8em;line-height: 3em}
+/* Barra superior/ anno*/
+.topbar .year{ grid-column: 4/7;
+    background-color: #a9b5c0;
+    text-align:center;
+    font-size: 16px;line-height: 2em;
+    border-radius: 20px;}
+/* Documento */
+.grid1 .doc{grid-column: 1/10; grid-row: 2/5;
+    height: 500px; width: auto;
+    background-color: #7f7f7f;
+    }

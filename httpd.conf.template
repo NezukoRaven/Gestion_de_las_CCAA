@@ -1,0 +1,31 @@
+# Settings to add to C:/Apache24/conf/httpd.conf
+# update as needed
+
+#
+# ServerName gives the name and port that the server uses to identify itself.
+# This can often be determined automatically, but we recommend you specify
+# it explicitly to prevent problems during startup.
+#
+# If your host doesn't have a registered DNS name, enter its IP address here.
+#
+# ServerName localhost:80 # use this if you're running this on a VirtualBox VM or PC
+ServerName 34.176.52.95:80
+
+
+# Django Project
+LoadFile "c:/python37/python37.dll"
+LoadModule wsgi_module "c:/python37/lib/site-packages/mod_wsgi/server/mod_wsgi.cp37-win_amd64.pyd"
+WSGIPythonHome "c:/python37"
+WSGIScriptAlias / "C:/Users/carlosespinoza_huenu/Gestion_de_las_CCAA/Gestion_de_las_CCAA/wsgi.py"
+WSGIPythonPath "C:/Users/carlosespinoza_huenu/Gestion_de_las_CCAA/"
+
+<Directory "C:/Users/carlosespinoza_huenu/Gestion_de_las_CCAA/Gestion_de_las_CCAA/">
+    <Files wsgi.py>
+        Require all granted
+    </Files>
+</Directory>
+
+Alias /static "C:/Users/carlosespinoza_huenu/Gestion_de_las_CCAA/"
+<Directory "C:/Users/carlosespinoza_huenu/Gestion_de_las_CCAA/">
+    Require all granted
+</Directory>
