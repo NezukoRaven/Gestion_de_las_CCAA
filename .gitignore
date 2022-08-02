@@ -108,3 +108,5 @@ venv.bak/
 *.pot
 *.pyc
 __pycache__/
+Gestion_de_las_CCAA/urls.py
+Gestion_de_las_CCAA/settings.py

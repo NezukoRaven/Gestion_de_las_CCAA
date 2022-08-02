@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4x(=jmfa!f+mx71dmf&a4e#u)s58+^_k*68@mgs!4c@uay@$ju'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '34.176.52.95', '127.0.0.1','www.nezukoravengames.cf']
+ALLOWED_HOSTS = []
 
 
 # Application definition
