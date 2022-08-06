@@ -1,47 +1,149 @@
 {% extends 'core/base_admin.html' %}
-{% block content %} 
-{% block extra_css %}
-{% endblock extra_css %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="post" action="{% url 'guardar_informe' %}">
-
-
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+    {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'proccaa/inf_cierre.css' %}">    
+    {% endblock extra_css %}
+    <!DOCTYPE html>
+    <html lang="en" >
+    <head>
+      <meta charset="UTF-8">
+      <title>NUevo Innforme</title>
+    </head>
+    <body>
+    <!-- partial:index.partial.html -->
+    <div class="container">  
+      <form id="contact" action="{% url 'guardar_informe' %}" method="post">
         {% csrf_token %}
-
-        <h>Innovacion en la docencia</h>
-        <p>Metodologias y/o evaluaciones integradas o desarrolladas por las asignaturas:         <textarea name="metodologias" id="" cols="30" rows="2"></textarea></p>
-        <p>Capacitaciones en herramientas para la docencia:                                      <textarea name="capacitaciones" id="" cols="30" rows="2"></textarea></p>
-        <p>Numero y tipo de actividades realizadas en la plataforma CANVAS por los docentes:     <textarea name="actividades" id="" cols="30" rows="2"></textarea></p>
-        <p>Otras mejoras o innovaciones en la docencia evidenciadas por los miembros de la CCAA: <textarea name="otros" id="" cols="30" rows="2"></textarea></p>
-
-        <p>¿Que problematicas procuró mejorar con la estrategia pedagogica colaborativa implementada?</p>
-        <p>Objetivo: <textarea name="objetivo" id="" cols="40" rows="10"></textarea></p>
-        <p>Estrategia <textarea name="estrategia" id="" cols="40" rows="10"></textarea></p>
-
-        <p>2-. ¿Que aspectos fueron trabajados en el semestre otoño de 2022? y de estós ¿Cual de ellos tuvo mayor impacto en el rendimiento de los/las estudiantes? ¿Por qué?</p>
-        <textarea name="respuesta2" id="" cols="100" rows="10"></textarea>
-
-        <p>3-. ¿Qué elementos no fueron considerados y por qué razon?</p>
-        <textarea name="respuesta3" id="" cols="100" rows="10"></textarea>
-
-        <p>4-. ¿Considerando el plan de mejora de primavera 2020, según corresponda, realice un análisis del nivel de cumplimiento, considerando el o los problemas declarados?</p>
-        <textarea name="respuesta4" id="" cols="100" rows="10"></textarea>
-
-        <button type="submit">Guardar</button>
-    </form>
-
-
-</body>
-</html>
-
-{% block extrajs %} 
-{% endblock extrajs %}
+        <h3>Innforme de Cierre</h3>
+        <h4>Innovacion en la docencia</h4>
+        <div class="row">
+          <div class="col">
+            <label for="category_description" class="form-label">Periodo</label>
+            <Select class="form-control" name="periodo" id="periodo" required>
+                <option>Seleccione el periodo</option>
+                <option value= "Primavera">Primavera</option>
+                <option value= "Otoño">Otoño</option>                                           
+            </Select>                        
+          </div>
+          <div class="col">
+            <label for="category_description" class="form-label">Sede</label>
+            <Select class="form-control" name="sede" id="sede" required>
+                <option>Seleccione la sede</option>
+                <option value= "Providencia">Providencia</option>
+                <option value= "El llano">El Llano Subercaseaux</option>
+                <option value= "Talca">Talca</option>
+                <option value= "Temuco">Temuco</option>                                                  
+            </Select>                        
+          </div>
+          <div class="col">
+            <label for="category_description" class="form-label">Carrera</label>
+            <Select class="form-control" name="carrera" id="carrera" required>
+                <!-- Carreras Providencia-->
+                <option>Seleccione la carrera</option>
+                <!-- Carreras Diurno-->
+                <option value= "Administración Pública">Administración Pública</option>
+                <option value= "Auditoría e Ingeniería en Control de Gestión">Auditoría e Ingeniería en Control de Gestión</option>
+                <option value= "Derecho">Derecho</option>
+                <option value= "Enfermería">Enfermería</option>
+                <option value= "Fonoaudiología">Fonoaudiología</option>
+                <option value= "Ingeniería Civil Industrial">Ingeniería Civil Industrial</option>
+                <option value= "Ingeniería Civil Informática">Ingeniería Civil Informática</option>
+                <option value= "Ingeniería Civil Química">Ingeniería Civil Química</option>
+                <option value= "Ingeniería Comercial">Ingeniería Comercial</option>
+                <option value= "Kinesiología">Kinesiología</option>
+                <option value= "Medicina">Medicina</option>
+                <option value= "Nutrición y Dietética">Nutrición y Dietética</option>
+                <option value= "Obstetricia y Puericultura">Obstetricia y Puericultura</option>
+                <option value= "Odontología">Odontología</option>
+                <option value= "Periodismo">Periodismo</option>
+                <option value= "Psicología">Psicología</option>
+                <option value= "Publicidad y Comunicación Integral">Publicidad y Comunicación Integral</option>
+                <option value= "Química y Farmacia">Química y Farmacia</option>
+                <option value= "Terapia Ocupacional">Terapia Ocupacional</option>
+                <!-- Carreras Vespertino-->
+                <option value= "Administración Pública_V">Kinesiología (VESPERTINO)</option>
+                <option value= "Auditoría e Ingeniería en Control de Gestión_V">Auditoría e Ingeniería en Control de Gestión (VESPERTINO)</option>
+                <option value= "Derecho V">Derecho (VESPERTINO)</option>
+                <option value= "Ingeniería Comercial V">Ingeniería Comercial (VESPERTINO)</option>
+                <option value= "Psicología V">Psicología (VESPERTINO)</option>                                                     
+            </Select>                        
+          </div>
+          <div class="col">
+            <label for="category_description" class="form-label">Nivel</label>
+            <Select class="form-control" name="nivel" id="nivel" required>
+                <option>Seleccione el nivel</option>
+                <option value= "1">Nivel 1</option>
+                <option value= "2">Nivel 2</option>
+                <option value= "3">Nivel 3</option>
+                <option value= "4">Nivel 4</option>    
+                <option value= "5">Nivel 5</option>
+                <option value= "6">Nivel 6</option>
+                <option value= "7">Nivel 7</option>
+                <option value= "8">Nivel 8</option>  
+                <option value= "9">Nivel 9</option>
+                <option value= "10">Nivel 10</option>
+                <option value= "11">Nivel 11</option>                                             
+            </Select>                        
+          </div>
+        </div>
+        <p>
+          &nbsp;
+          <!--linea de espacio-->
+        </p>
+        <a>Metodologias y/o evaluaciones integradas o desarrolladas por las asignaturas</a>
+        <fieldset>
+          <textarea name="metodologias" id="" cols="30" rows="2"></textarea></p>
+        </fieldset>
+        <a>Capacitaciones en herramientas para la docencia</a>
+        <fieldset>
+          <textarea name="capacitaciones" id="" cols="30" rows="2"></textarea></p>
+        </fieldset>
+        <a>Numero y tipo de actividades realizadas en la plataforma CANVAS por los docentes</a>
+        <fieldset>
+          <textarea name="actividades" id="" cols="30" rows="2"></textarea></p>
+        </fieldset>
+        <a>Otras mejoras o innovaciones en la docencia evidenciadas por los miembros de la CCAA</a>
+        <fieldset>
+          <textarea name="otros" id="" cols="30" rows="2"></textarea></p>
+        </fieldset>
+        <a>1-. ¿Que problematicas procuró mejorar con la estrategia pedagogica colaborativa implementada?</a>
+        
+        <fieldset>
+          &nbsp;
+          <div class="row">
+            <div class="col">
+              <a>Objetivo <textarea name="objetivo" id="" cols="40" rows="10"></textarea></a>
+            </div>
+            <div class="col">
+              <a>Estrategia <textarea name="estrategia" id="" cols="40" rows="10"></textarea></a>
+            </div>
+          </div>
+        </fieldset>
+        <a>2-. ¿Que aspectos fueron trabajados en el semestre otoño de 2022? y de estós ¿Cual de ellos tuvo mayor impacto en el rendimiento de los/las estudiantes? ¿Por qué?</a>
+        <fieldset>
+          <textarea name="respuesta2" id="" cols="100" rows="10"></textarea>
+        </fieldset>
+        <a>3-. ¿Qué elementos no fueron considerados y por qué razon?</a>
+        <fieldset>
+          <textarea name="respuesta3" id="" cols="100" rows="10"></textarea>
+        </fieldset>
+        <a>4-. ¿Considerando el plan de mejora de primavera 2020, según corresponda, realice un análisis del nivel de cumplimiento, considerando el o los problemas declarados?</a>
+        <fieldset>
+          <textarea name="respuesta4" id="" cols="100" rows="10"></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Guardar</button>
+        </fieldset>
+      </form>
+    
+      
+    </div>
+    <!-- partial -->
+      
+    </body>
+    </html>
+    {% block extrajs %}    
+    {% endblock extrajs %}    
 {% endblock %}
